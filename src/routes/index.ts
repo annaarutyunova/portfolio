@@ -3,9 +3,9 @@ const routes: Router = express.Router();
 import db from '../database';
 import getName from '../controllers/index';
 
-// routes.get('/', (req: Request, res: Response) => {
-//     res.send("Go to awesome/applicant to see more information")
-// });
+routes.get('/', (req: Request, res: Response) => {
+    res.send("Go to awesome/applicant to see more information")
+});
 // routes.get('/awesome/applicant', (req: Request, res: Response) => {
 //     res.send("This page is about Anna")
 // });
@@ -19,7 +19,7 @@ import getName from '../controllers/index';
 //         res.status(500).send('Internal Server Error');
 //     }
 // })
-routes.get('/', getName)
+routes.get('/name', getName)
 
 
 export default routes;
