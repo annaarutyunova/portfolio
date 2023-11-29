@@ -14,15 +14,15 @@ async function getName(req: Request, res: Response){
 }
 
 
-async function getAge(req: Request, res: Response){
+async function getAbout(req: Request, res: Response){
     try {
-        const data = await db.any('SELECT age FROM public.information');
-        console.log('Should be my age:', data[0]['age'])
-        res.json(data[0]['age']);
+        const data = await db.any('SELECT about FROM public.information');
+        console.log('Should be my info:', data[0]['about'])
+        res.json(data[0]['about']);
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
 }
 
-export default {getName, getAge};
+export default {getName, getAbout};
