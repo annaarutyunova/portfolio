@@ -1,7 +1,8 @@
 import express, {Router, Request, Response} from 'express';
 const routes: Router = express.Router();
 import db from '../database';
-import getName from '../controllers/index';
+import controllers from '../controllers/index';
+const {getName, getAge} = controllers;
 
 routes.get('/', (req: Request, res: Response) => {
     res.send("Go to awesome/applicant to see more information")
@@ -20,6 +21,7 @@ routes.get('/', (req: Request, res: Response) => {
 //     }
 // })
 routes.get('/name', getName)
+routes.get('/age', getAge)
 
 
 export default routes;
